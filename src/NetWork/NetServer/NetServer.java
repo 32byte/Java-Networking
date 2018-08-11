@@ -1,6 +1,6 @@
 package NetWork.NetServer;
 
-public class NetClient
+public class NetServer
 {
 
 }
