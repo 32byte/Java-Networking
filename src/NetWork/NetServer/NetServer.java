@@ -21,12 +21,12 @@ public class NetServer implements Runnable
         this.maxConnections = maxConnections;
         serverSocket = new ServerSocket(port);
         connections = new ArrayList<>();
-
         System.out.println("Server started!");
     }
 
     public void run()
     {
+        System.out.println("Server running");
         while(!serverSocket.isClosed() && !Thread.interrupted() && currentConnections < maxConnections)
         {
             Connection connection = new Connection();
@@ -69,7 +69,7 @@ public class NetServer implements Runnable
             printWriter.println(string);
         }
 
-        public String receive(String string)
+        public String receive()
         {
             try {
                 return bufferedReader.readLine();
